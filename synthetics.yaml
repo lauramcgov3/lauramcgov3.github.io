@@ -15,5 +15,5 @@ jobs:
           apiKey: ${{ secrets.DATADOG_API_KEY }}
           appKey: ${{ secrets.DATADOG_APP_KEY }}
           locations: "aws:us-east-2"
-          tests: "8y9-umn-aba"  # Your Synthetic Test public ID here
+          tests: "4na-s6e-quj"  # Your Synthetic Test public ID here
 
