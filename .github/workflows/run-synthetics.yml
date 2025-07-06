@@ -1,0 +1,17 @@
+name: Run Datadog UI Synthetic Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-synthetics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Datadog Synthetic Tests
+        uses: DataDog/synthetics-ci-github-action@v0.8.0
+        with:
+          api_key: ${{ secrets.DATADOG_API_KEY }}
+          app_key: ${{ secrets.DATADOG_APP_KEY }}
+          public_ids: "rcf-24a-ytz"  # Replace with your test's Public ID
