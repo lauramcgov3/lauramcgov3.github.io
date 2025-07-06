@@ -1,0 +1,19 @@
+name: Datadog Synthetic Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-synthetics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Datadog Synthetic Tests
+        uses: DataDog/synthetics-ci@v0.4.6
+        with:
+          apiKey: ${{ secrets.DATADOG_API_KEY }}
+          appKey: ${{ secrets.DATADOG_APP_KEY }}
+          locations: "aws:us-east-2"
+          tests: "8y9-umn-aba"  # Your Synthetic Test public ID here
+
